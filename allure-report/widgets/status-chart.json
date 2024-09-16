@@ -1,0 +1,1 @@
+[{"uid":"e015b566c48649e4","name":"Test01: Log in to grafana using DB","time":{"start":1726497127070,"stop":1726497130026,"duration":2956},"status":"passed","severity":"normal"},{"uid":"28572dd3d4a2d4a","name":"Test01: Create calculation","time":{"start":1726497376901,"stop":1726497385617,"duration":8716},"status":"passed","severity":"normal"}]

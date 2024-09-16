@@ -1,0 +1,3 @@
+"Status","Start Time","Stop Time","Duration in ms","Parent Suite","Suite","Sub Suite","Test Class","Test Method","Name","Description"
+"passed","Mon Sep 16 17:32:07 IDT 2024","Mon Sep 16 17:32:10 IDT 2024","2956","test_cases","test_cases_db","TestCasesDB","","","Test01: Log in to grafana using DB","Log in to grafana using DB"
+"passed","Mon Sep 16 17:36:16 IDT 2024","Mon Sep 16 17:36:25 IDT 2024","8716","test_cases","test_cases_desktop","TestCasesDesktop","","","Test01: Create calculation","make calculation with a given string"

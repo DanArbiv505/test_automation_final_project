@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Environmnt>
+    <!-- Generic-->
+    <WaitTime>15</WaitTime>
+    <ScreenshotPath>./allure-screen-shots/</ScreenshotPath>
+
+    <!-- Web -->
+    <Browser>Chrome</Browser>
+    <Url>https://atid.store/</Url>
+    <MinPrice>40</MinPrice>
+    <MaxPrice>130</MaxPrice>
+    <CSVLocation>./Data-Driven-Testing/items_filter.csv</CSVLocation>
+    <ApplitoolsSkip>yes</ApplitoolsSkip> <!-- yes/no -->
+    <ApplitoolsKey>FXt5udQ4dJpcobFbMYLj102sKm5D4fW8wasbJPZbEfvZo110</ApplitoolsKey>
+    <SendToFilter>tshirt</SendToFilter>
+    <SendToFilter2>Jeans</SendToFilter2>
+    <SendToFilter2.1>Blue</SendToFilter2.1>
+    <ExpectedSubTotalPrice>540.00</ExpectedSubTotalPrice>
+    <ShippingPayment>12.50</ShippingPayment>
+    <IndexNumberQuantityUpdate>2</IndexNumberQuantityUpdate>
+    <QuantityToInsert>3</QuantityToInsert>
+    <MoveByIndex>1</MoveByIndex>
+    <MoveByName>Slim</MoveByName>
+    <MoveByMaxPrice>120</MoveByMaxPrice>
+
+    <!-- Mobile -->
+    <Udid>R58N35A25GD</Udid>
+    <App_Package>com.mortgagecalculator.house.mortgagepaymentcalculator.loancalculator</App_Package>
+    <App_Activity>com.example.mortgagecalculator.SplashActivity</App_Activity>
+    <Mobile_Device>android</Mobile_Device>
+    <Appium_server>http://localhost:4730/wd/hub</Appium_server>
+    <Bundle_ID>com.mortgagecalculator.house.mortgagepaymentcalculator.loancalculator</Bundle_ID> <!-- IOS -->
+    <Report_Directory>reports</Report_Directory>
+    <Report_Format>xml</Report_Format>
+    <Test_Name>Mobile Final Test</Test_Name>
+    <DurationSwipe>200</DurationSwipe>
+    <DirectionSwipe>right</DirectionSwipe>
+    <Operator1>5</Operator1>
+    <Operator2>4</Operator2>
+    <Operand>*</Operand>
+    <IndexToDelete>2</IndexToDelete>
+
+    <!-- API -->
+    <UrlHost>http://localhost:3000/</UrlHost>
+    <UsersRes>api/users/</UsersRes>
+    <TeamsRes>api/teams/</TeamsRes>
+    <UserNameGrafana>admin</UserNameGrafana>
+    <PasswordGrafana>admin</PasswordGrafana>
+
+    <!-- Electron -->
+    <Electron_driver>C:/Automation/electron/electrondriver-v3.1.2-win32-x64/electrondriver.exe</Electron_driver>
+    <Electron_app>C:/Users/User/AppData/Local/Programs/todolist/Todolist.exe</Electron_app>
+    <Index_to_delete>0</Index_to_delete>
+
+
+    <!-- Desktop -->
+    <Desktop_App>Microsoft.WindowsCalculator_8wekyb3d8bbwe!App</Desktop_App>
+
+    <!-- DataBase -->
+    <DB_Host>sql12.freesqldatabase.com</DB_Host>
+    <DB_Name>sql12731617</DB_Name>
+    <DB_User>sql12731617</DB_User>
+    <DB_Password>hbW1b3ZlwG</DB_Password>
+    <Url_Grafana>http://localhost:3000</Url_Grafana>
+    <WorkOnDB>yes</WorkOnDB>
+</Environmnt>
