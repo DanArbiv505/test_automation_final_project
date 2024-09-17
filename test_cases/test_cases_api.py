@@ -28,3 +28,7 @@ class TestApi:
     @allure.description('Delete team using name and extract the relevant id')
     def test_delete_team_using_name(self):
         APIFlows.delete_team('dan')
+
+    # Reset the user name back to default, when running again test number 2 will not fail
+    def teardown_class(self):
+        APIFlows.update_user('balulu', 'danino@gmail.co.il', 'dan', 'danino')
