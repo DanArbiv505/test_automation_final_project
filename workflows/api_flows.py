@@ -21,15 +21,15 @@ class APIFlows:
     def add_team(new_name, email):
         payload = {'name': new_name, 'email': email}
         response_status = APIActions.add(url+resource_team, payload,  user_name, password)
-        Verifications.verify_equals(response_status, 200)
+        return response_status
 
     @staticmethod
     @allure.step("find a user detail")
-    def find_user_detail(node,  expected):
+    def find_user_detail(node):
         param = None
         response = APIActions.get(url+resource_user, param, user_name, password)
         extract_val = APIActions.extract_data(response, node)
-        Verifications.verify_equals(extract_val, expected)
+        return extract_val
 
     @staticmethod
     @allure.step("update user by user login name")
@@ -42,7 +42,7 @@ class APIFlows:
         get_id = APIActions.extract_data(response, ['id'])
         print(get_id)
         response_status = APIActions.update(url + resource_user + str(get_id), payload, user_name, password)
-        Verifications.verify_equals(response_status, 200)
+        return response_status
 
     @staticmethod
     @allure.step("delete team")
@@ -54,4 +54,4 @@ class APIFlows:
         get_id = APIActions.extract_data(response, ['teams', 0, 'id'])
         print(get_id)
         response_status = APIActions.delete(url + resource_team + str(get_id), user_name, password)
-        Verifications.verify_equals(response_status, 200)
+        return response_status

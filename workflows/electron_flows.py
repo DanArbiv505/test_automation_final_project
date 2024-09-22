@@ -75,6 +75,10 @@ class ElectronFlows:
         complete_button_elem_list = page.electron_page.get_complete_task_button()
         UiActions.click(complete_button_elem_list[len(complete_button_elem_list)-1])
 
+
+
+
+
     # @staticmethod
     # @allure.step('go to previous page and verify disable create task')
     # def check_previous_page():

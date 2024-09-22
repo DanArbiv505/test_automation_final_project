@@ -22,11 +22,7 @@ class WebFlows:
     @allure.step('Enter to main store page flow')
     def get_in_to_store_page():
         UiActions.click(page.start_page.get_shop_now())
-
-    @staticmethod
-    @allure.step('In store page verify "Filter by price text flow')
-    def verify_slider_bar_text(expected):
-        Verifications.verify_equals(page.main_store_page.slider_bar_txt().text, expected)
+        wait(For.ELEMENT_EXIST, page_objects.web_objects.main_store_page.slider_barr)
 
     @staticmethod
     @allure.step('Move left dot to set min price flow')
@@ -38,11 +34,6 @@ class WebFlows:
     def move_right_dot_in_slide_bar(x_offset, y_offset):
         UiActions.slider(page.main_store_page.slider_bar_action_right(), x_offset-250, y_offset)
 
-    @staticmethod
-    @allure.step('Verify min and max price flow')
-    def verify_min_max_price(expected_min, expected_max):
-        Verifications.verify_equals(page.main_store_page.min_price_txt().text.split(" ")[0], expected_min)
-        Verifications.verify_equals(page.main_store_page.max_price_txt().text.split(" ")[0], expected_max)
 
     @staticmethod
     @allure.step('Verify header menu displayed flow')
@@ -55,7 +46,8 @@ class WebFlows:
                      page.header_page.get_about(),
                      page.header_page.get_contact_us()
                      ]
-        Verifications.check_list_display(menu_list)
+        return menu_list
+
 
     @staticmethod
     @allure.step('Back to start page flow')
@@ -85,7 +77,7 @@ class WebFlows:
                  items = page.main_store_page.get_products_list_rating_in_page() # receive the new rating items in new page
         check_list_sorted = check_list
         check_list_sorted.sort()
-        Verifications.verify_equals(check_list, check_list_sorted)
+        return check_list, check_list_sorted
 
     @staticmethod
     @allure.step('Filter items by sending value flow')
@@ -93,10 +85,6 @@ class WebFlows:
         UiActions.change_text(page.main_store_page.get_search_field(), value)
         UiActions.click(page.main_store_page.get_search_button())
 
-    @staticmethod
-    @allure.step('Verify number of items as expected flow')
-    def verify_size_of_item(expected):
-        Verifications.verify_equals(len(page.main_store_page.get_products_list()), int(expected))
 
     @staticmethod
     @allure.step('Filter by some value and use sort by user decide - this test for applitools visual test')
@@ -121,25 +109,24 @@ class WebFlows:
 
     @staticmethod
     @allure.step('Verify items price')
-    def verify_price_of_choose_items():
-        #UiActions.move_to(page.main_store_page.get_view_cart(), page.main_store_page.get_view_cart_button())
+    def go_to_cart():
          UiActions.click(page.main_store_page.get_view_cart())
 
 
 
     @staticmethod
     @allure.step('Verify total price and with delivery decision')
-    def verify_total_in_cart(expected_sub_total, shipping, after_shipping_expected):
+    def verify_total_in_cart(shipping_method):
         sum = 0
         total_price_list = page.cart_page.get_total_list()
         for price in total_price_list:
             sum += float(price.text.split(' ')[0])
-        Verifications.verify_equals(sum, float(expected_sub_total)) # verify sum of list
-        Verifications.verify_equals(page.cart_page.get_sub_total_price().text.split(' ')[0], expected_sub_total) # verify sub total price
+
         # adding the shipping price
-        ship_pay = utilities.common_ops.shipping_delivery(shipping)
-        sum += ship_pay
-        Verifications.verify_equals(sum, float(expected_sub_total) + float(after_shipping_expected))
+        ship_pay = utilities.common_ops.shipping_delivery(shipping_method)
+        sum_with_ship_pay = sum + ship_pay
+        return sum, sum_with_ship_pay
+
 
     @staticmethod
     @allure.step('Update quantity cart')
@@ -148,11 +135,10 @@ class WebFlows:
         UiActions.clear(page.cart_page.get_quantity_of_item_in_cart()[int(num_item)])
         UiActions.change_text(page.cart_page.get_quantity_of_item_in_cart()[int(num_item)], quantity_to_update)
         UiActions.click(page.cart_page.get_update_carte())
-        #time.sleep(5)
         wait(For.ELEMENT_EXIST, page_objects.web_objects.cart_page.alert)
-        #wait(For.ELEMENT_EXIST, page.cart_page.alert)
         amount_of_item_after = page.cart_page.get_total_list()[int(num_item)].text.split(" ")[0]
-        Verifications.verify_equals(float(amount_of_item_after), float(amount_of_item_before) * int(quantity_to_update))
+        return float(amount_of_item_after), float(amount_of_item_before)
+
 
     @staticmethod
     @allure.step('Remove item')

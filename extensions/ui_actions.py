@@ -77,7 +77,7 @@ class UiActions:
     @staticmethod
     @allure.step('drag and drop - electron')
     def drag_and_drop(elem1, elem2):
-        conf.action.drag_and_drop(elem1,elem2).perform()
+        ActionChains(conf.driver).drag_and_drop(elem1,elem2).perform()
 
     @staticmethod
     @allure.step('Mouse over one element - electron')

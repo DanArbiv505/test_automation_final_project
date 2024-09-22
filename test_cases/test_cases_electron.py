@@ -18,7 +18,7 @@ class TestCasesElectron:
         ElectronFlows.create_task('My 3 task test','important')
         ElectronFlows.create_task('My 4 task test','important')
         ElectronFlows.complete_last_task()
-        time.sleep(2)
+
 
 
 
@@ -28,19 +28,19 @@ class TestCasesElectron:
         ElectronFlows.create_task('My 5 task test - important', 'important')
         ElectronFlows.create_task('My 6 task test', 'important')
         ElectronFlows.complete_last_task()
-        time.sleep(2)
+
 
     @allure.title('Test03: Delete task')
     @allure.description('delete task per index')
     @pytest.mark.skipif(True, reason="List always be empty because using delete all in teardown method")
     def test_delete_task(self):
         ElectronFlows.delete_task(int(get_data('Index_to_delete')))
-        time.sleep(2)
+
 
 
     def teardown_method(self):
         ElectronFlows.delete_all_task()
-        time.sleep(2)
+
 
     # @allure.title('Test03: Swipe to previous date')
     # @allure.description('Swipe to previous date')

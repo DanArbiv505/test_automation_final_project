@@ -2,14 +2,14 @@
 <Environmnt>
     <!-- Generic-->
     <WaitTime>15</WaitTime>
-    <ScreenshotPath>./allure-screen-shots/</ScreenshotPath>
+    <ScreenshotPath>./allure_screen_shots/</ScreenshotPath>
 
     <!-- Web -->
     <Browser>Chrome</Browser>
     <Url>https://atid.store/</Url>
     <MinPrice>40</MinPrice>
     <MaxPrice>130</MaxPrice>
-    <CSVLocation>./Data-Driven-Testing/items_filter.csv</CSVLocation>
+    <CSVLocation>./Data_Driven_Testing/items_filter.csv</CSVLocation>
     <ApplitoolsSkip>yes</ApplitoolsSkip> <!-- yes/no -->
     <ApplitoolsKey>FXt5udQ4dJpcobFbMYLj102sKm5D4fW8wasbJPZbEfvZo110</ApplitoolsKey>
     <SendToFilter>tshirt</SendToFilter>

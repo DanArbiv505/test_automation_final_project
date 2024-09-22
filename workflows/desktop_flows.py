@@ -9,11 +9,11 @@ class DesktopFlows():
 
     @staticmethod
     @allure.step('perform calculate  on a given string')
-    def get_calculate(input, expected):
+    def get_calculate(input):
         for val in input:
             DesktopFlows.click_relevant_button(val)
         UiActions.click(page.desktop_calculator_app.get_equals())
-        Verifications.verify_equals(DesktopFlows.get_result(), str(expected))
+        return DesktopFlows.get_result()
 
     @staticmethod
     @allure.step('choose the operator or operand to click')

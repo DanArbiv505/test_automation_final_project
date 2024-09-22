@@ -71,6 +71,7 @@ class Shipping:
 
 # Function to select a shipping method and calculate the shipping cost based on the selection
 def shipping_delivery(shipping):
+    ship_pay = None
     if shipping == 'Free shipping':
         ship_pay = 0
     elif shipping == 'Local pickup':

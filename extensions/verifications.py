@@ -32,3 +32,8 @@ class Verifications:
             soft_assert(elem_list[i].is_displayed(),f"Element of: {elem_list[i].text} not displayed.")
 
         verify_expectations()
+
+    @staticmethod
+    @allure.step('Check equal of number of checks with soft assertion')
+    def verify_equal_with_soft_assert(val1, val2):
+        soft_assert(val1 == val2, f"{val1} is not equal to {val2}")

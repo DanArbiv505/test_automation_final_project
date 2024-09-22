@@ -1,1 +1,1 @@
-[{"name":"Jenkins","type":"jenkins","url":"http://localhost:9090/","buildOrder":8,"buildName":"Electron #8","buildUrl":"http://localhost:9090/job/Full%20stack%20Electron/8/","reportName":"AllureReport","reportUrl":"http://localhost:9090/job/Full%20stack%20Electron/8/allure"}]
+[{"name":"Jenkins","type":"jenkins","url":"http://localhost:9090/","buildOrder":4,"buildName":"DB #4","buildUrl":"http://localhost:9090/job/Full%20stack%20DB/4/","reportName":"AllureReport","reportUrl":"http://localhost:9090/job/Full%20stack%20DB/4/allure"}]

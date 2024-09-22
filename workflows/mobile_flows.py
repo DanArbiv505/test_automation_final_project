@@ -97,6 +97,7 @@ class MobileFlows:
             MobileActions.click(page.basic_calc_page.get_number_9())
 
         MobileActions.click(page.basic_calc_page.get_equal())
+
         Verifications.verify_equals(page.basic_calc_page.get_text_result().text, expected)
         MobileActions.tap(page.basic_calc_page.get_back_button(),1)
 
