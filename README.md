@@ -35,7 +35,7 @@ The project is an example of infrastructure for automation testing of different 
 ***
 
 ### _List of applications were used in this project:_
-* [Atid.store](https://atid.store/) webpage - Web based application
+* [Atid.store](https://atid.store/) E-Commerce App - Web based application
 * Mortgage calculator - Mobile application
 * Grafana API - Web API
 * TodoList -Electron application
