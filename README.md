@@ -1,5 +1,5 @@
 ## **Full Stack Automation Final Project**
-[Short Video - Demonstration](https://...)
+
 ### **_This project created to demonstrate my knowledge and skills in Automation Testing._**
 ***
 ### _About_
@@ -53,6 +53,7 @@ The project is an example of infrastructure for automation testing of different 
 > Each of the applications has a few tests for demonstration purpose.
 These tests can be developed in a very simple way, due to a lot of work with the infrastructure.
 [Test_cases](https://github.com/DanArbiv505/test_automation_final_project/tree/master/test_cases)
+
 
 ### _Known Issues:_
 Sometimes can be conflicts with some dependencies the applications are using, for example - sharing ports.
